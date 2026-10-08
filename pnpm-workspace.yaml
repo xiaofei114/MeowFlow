@@ -1,0 +1,11 @@
+packages:
+  - 'packages/*'
+  - 'examples/*'
+
+# pnpm 10+ 支持在 workspace 配置中声明设置项，避免写入项目外的全局 store
+storeDir: .pnpm-store
+stateDir: .pnpm-state
+
+# 允许执行安装脚本的依赖（esbuild 需要下载/链接平台二进制）
+allowBuilds:
+  esbuild: true

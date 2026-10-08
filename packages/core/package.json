@@ -1,0 +1,54 @@
+{
+  "name": "@meowflow/core",
+  "version": "0.1.0",
+  "description": "MeowFlow 核心引擎：AI 适配、Agent 主循环、工具与技能系统、上下文压缩、挂起恢复",
+  "keywords": [
+    "ai",
+    "agent",
+    "llm",
+    "framework",
+    "tool-calling",
+    "context-compression",
+    "typescript"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@meowflow/protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaofei114/MeowFlow.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/xiaofei114/MeowFlow/tree/main/packages/core#readme",
+  "bugs": {
+    "url": "https://github.com/xiaofei114/MeowFlow/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
