@@ -1,5 +1,7 @@
 # @xiaofeiqwq/protocol
 
+[![npm](https://img.shields.io/npm/v/@xiaofeiqwq/protocol.svg)](https://www.npmjs.com/package/@xiaofeiqwq/protocol)
+
 MeowFlow 事件协议：前后端与其他语言共用的类型、SSE 编解码与 JSON Schema。
 
 MeowFlow event protocol: types, SSE codec and JSON Schema shared between frontend, backend and other languages.

@@ -1,5 +1,9 @@
 # MeowFlow
 
+[![npm](https://img.shields.io/npm/v/@xiaofeiqwq/core.svg?label=npm)](https://www.npmjs.com/package/@xiaofeiqwq/core)
+[![license](https://img.shields.io/npm/l/@xiaofeiqwq/core.svg)](./LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-xiaofei114%2FMeowFlow-181717?logo=github)](https://github.com/xiaofei114/MeowFlow)
+
 轻量、自由、可自定义的 AI Agent 全栈开发框架。
 
 Lightweight, flexible and customizable full-stack framework for building AI agents.
@@ -64,7 +68,7 @@ MeowFlow 是一套用于开发 AI Agent 的 TypeScript 工具库（monorepo）�
 
 ### 安装
 
-需要 Node.js >= 18。
+需要 Node.js >= 18。当前版本 `0.1.0`，已发布到 [npm](https://www.npmjs.com/~xiaofeiqwq)。
 
 ```bash
 # 后端

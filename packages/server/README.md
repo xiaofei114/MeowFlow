@@ -1,5 +1,7 @@
 # @xiaofeiqwq/server
 
+[![npm](https://img.shields.io/npm/v/@xiaofeiqwq/server.svg)](https://www.npmjs.com/package/@xiaofeiqwq/server)
+
 MeowFlow 服务端适配：基于协议规范的 HTTP + SSE 接口，供任意语言的前端或后端对接。
 
 MeowFlow server adapter: protocol-based HTTP + SSE endpoints consumable by any frontend or backend.

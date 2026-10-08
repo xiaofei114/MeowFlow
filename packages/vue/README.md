@@ -1,5 +1,7 @@
 # @xiaofeiqwq/vue
 
+[![npm](https://img.shields.io/npm/v/@xiaofeiqwq/vue.svg)](https://www.npmjs.com/package/@xiaofeiqwq/vue)
+
 MeowFlow 前端适配：Vue3 headless composable 与默认样式组件。
 
 MeowFlow frontend adapter: Vue 3 headless composable and default-styled components.

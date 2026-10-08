@@ -1,5 +1,7 @@
 # @xiaofeiqwq/core
 
+[![npm](https://img.shields.io/npm/v/@xiaofeiqwq/core.svg)](https://www.npmjs.com/package/@xiaofeiqwq/core)
+
 MeowFlow 核心引擎：AI 适配、Agent 主循环、工具与技能系统、上下文压缩、挂起恢复。
 
 MeowFlow core engine: provider adapters, agent loop, tool and skill systems, context compression, suspend/resume.

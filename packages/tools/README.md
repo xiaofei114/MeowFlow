@@ -1,5 +1,7 @@
 # @xiaofeiqwq/tools
 
+[![npm](https://img.shields.io/npm/v/@xiaofeiqwq/tools.svg)](https://www.npmjs.com/package/@xiaofeiqwq/tools)
+
 MeowFlow 内置工具集：文件系统、HTTP、Shell、代码搜索、向用户提问、子代理。
 
 MeowFlow built-in tools: filesystem, HTTP, shell, code search, ask-user, sub-agent.
