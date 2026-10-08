@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Message } from '@meowflow/protocol';
+import type { Message } from '@xiaofeiqwq/protocol';
 import { compressContext, estimateTokens, type Provider, type ProviderChunk } from '../src/index';
 
 function summaryProvider(text = '摘要'): Provider {

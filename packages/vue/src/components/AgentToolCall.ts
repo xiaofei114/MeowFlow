@@ -1,4 +1,4 @@
-import type { AccumulatedToolCall } from '@meowflow/protocol';
+import type { AccumulatedToolCall } from '@xiaofeiqwq/protocol';
 import { defineComponent, h, ref, type PropType, type VNodeChild } from 'vue';
 
 const STATUS_LABEL: Record<AccumulatedToolCall['status'], string> = {

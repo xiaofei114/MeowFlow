@@ -1,5 +1,5 @@
 {
-  "name": "@meowflow/server",
+  "name": "@xiaofeiqwq/server",
   "version": "0.1.0",
   "description": "MeowFlow 服务端适配：基于协议规范的 HTTP + SSE 接口，供任意语言的前端或后端对接",
   "keywords": [
@@ -34,8 +34,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@meowflow/core": "workspace:*",
-    "@meowflow/protocol": "workspace:*"
+    "@xiaofeiqwq/core": "workspace:*",
+    "@xiaofeiqwq/protocol": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.7.5"

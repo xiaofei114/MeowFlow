@@ -1,4 +1,4 @@
-import { defineTool, suspend, type ToolDefinition } from '@meowflow/core';
+import { defineTool, suspend, type ToolDefinition } from '@xiaofeiqwq/core';
 
 /** 向用户提问的挂起载荷，前端据此渲染交互表单。 */
 export interface AskUserPayload {

@@ -1,5 +1,5 @@
 {
-  "name": "@meowflow/protocol",
+  "name": "@xiaofeiqwq/protocol",
   "version": "0.1.0",
   "description": "MeowFlow 事件协议：前后端与其他语言共用的类型、SSE 编解码与 JSON Schema",
   "keywords": [

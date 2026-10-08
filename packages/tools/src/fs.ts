@@ -1,6 +1,6 @@
 import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { basename, dirname, relative, resolve } from 'node:path';
-import { ToolResult, defineTool, toolError, type ToolDefinition } from '@meowflow/core';
+import { ToolResult, defineTool, toolError, type ToolDefinition } from '@xiaofeiqwq/core';
 import { clip, globToRegExp, resolveWithinRoot, walkFiles } from './utils';
 
 export interface FileToolOptions {

@@ -1,5 +1,5 @@
-import { SseParser } from '@meowflow/protocol';
-import type { AgentEvent } from '@meowflow/protocol';
+import { SseParser } from '@xiaofeiqwq/protocol';
+import type { AgentEvent } from '@xiaofeiqwq/protocol';
 import {
   Agent,
   ToolResult,
@@ -7,7 +7,7 @@ import {
   suspend,
   type Provider,
   type ProviderChunk,
-} from '@meowflow/core';
+} from '@xiaofeiqwq/core';
 import { afterEach, describe, expect, it } from 'vitest';
 import { createAgentServer, type AgentServer } from '../src/index';
 

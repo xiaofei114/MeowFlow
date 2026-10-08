@@ -1,4 +1,4 @@
-# @meowflow/tools
+# @xiaofeiqwq/tools
 
 MeowFlow 内置工具集：文件系统、HTTP、Shell、代码搜索、向用户提问、子代理。
 
@@ -19,13 +19,13 @@ MeowFlow built-in tools: filesystem, HTTP, shell, code search, ask-user, sub-age
 ### 安装
 
 ```bash
-pnpm add @meowflow/tools
+pnpm add @xiaofeiqwq/tools
 ```
 
 ### 快速上手
 
 ```ts
-import { createDefaultTools } from '@meowflow/tools';
+import { createDefaultTools } from '@xiaofeiqwq/tools';
 
 const tools = createDefaultTools({
   root: process.cwd(),
@@ -136,13 +136,13 @@ A set of ready-to-use tool implementations. They are ordinary `ToolDefinition`s 
 ### Install
 
 ```bash
-pnpm add @meowflow/tools
+pnpm add @xiaofeiqwq/tools
 ```
 
 ### Quick start
 
 ```ts
-import { createDefaultTools } from '@meowflow/tools';
+import { createDefaultTools } from '@xiaofeiqwq/tools';
 
 const tools = createDefaultTools({
   root: process.cwd(),

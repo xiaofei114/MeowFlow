@@ -1,4 +1,4 @@
-import type { AgentEvent, SuspendReason } from '@meowflow/protocol';
+import type { AgentEvent, SuspendReason } from '@xiaofeiqwq/protocol';
 import type { Logger } from '../logger';
 
 /** 对联合类型做分配式 Omit。 */

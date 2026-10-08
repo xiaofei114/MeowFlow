@@ -1,5 +1,5 @@
 {
-  "name": "@meowflow/tools",
+  "name": "@xiaofeiqwq/tools",
   "version": "0.1.0",
   "description": "MeowFlow 内置工具集：文件系统、HTTP、Shell、代码搜索、向用户提问、子代理",
   "keywords": [
@@ -34,8 +34,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@meowflow/core": "workspace:*",
-    "@meowflow/protocol": "workspace:*"
+    "@xiaofeiqwq/core": "workspace:*",
+    "@xiaofeiqwq/protocol": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.7.5"

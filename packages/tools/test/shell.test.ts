@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { ToolContext, ToolDefinition, ToolResult } from '@meowflow/core';
+import type { ToolContext, ToolDefinition, ToolResult } from '@xiaofeiqwq/core';
 import { createShellTools } from '../src/index';
 
 const stubContext: ToolContext = {

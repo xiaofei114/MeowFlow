@@ -1,4 +1,4 @@
-import type { Message, ToolCall } from '@meowflow/protocol';
+import type { Message, ToolCall } from '@xiaofeiqwq/protocol';
 import type { MaybePromise } from './tools/types';
 
 /** 挂起中的工具调用批次，用于恢复运行。 */

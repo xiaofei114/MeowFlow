@@ -1,5 +1,5 @@
 {
-  "name": "@meowflow/example-fullstack",
+  "name": "@xiaofeiqwq/example-fullstack",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -14,11 +14,11 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@meowflow/core": "workspace:*",
-    "@meowflow/protocol": "workspace:*",
-    "@meowflow/server": "workspace:*",
-    "@meowflow/tools": "workspace:*",
-    "@meowflow/vue": "workspace:*",
+    "@xiaofeiqwq/core": "workspace:*",
+    "@xiaofeiqwq/protocol": "workspace:*",
+    "@xiaofeiqwq/server": "workspace:*",
+    "@xiaofeiqwq/tools": "workspace:*",
+    "@xiaofeiqwq/vue": "workspace:*",
     "vue": "^3.5.12"
   },
   "devDependencies": {

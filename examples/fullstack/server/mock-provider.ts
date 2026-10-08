@@ -1,4 +1,4 @@
-import type { ChatParams, Message, Provider, ProviderChunk } from '@meowflow/core';
+import type { ChatParams, Message, Provider, ProviderChunk } from '@xiaofeiqwq/core';
 
 /**
  * Demo 用的 mock provider。

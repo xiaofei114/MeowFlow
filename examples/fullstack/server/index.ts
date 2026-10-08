@@ -5,9 +5,9 @@
  * 配置后自动切换到真实模型（任何 OpenAI 兼容服务均可）。
  */
 import { resolve } from 'node:path';
-import { Agent, openaiCompat } from '@meowflow/core';
-import { createAgentServer } from '@meowflow/server';
-import { createDefaultTools } from '@meowflow/tools';
+import { Agent, openaiCompat } from '@xiaofeiqwq/core';
+import { createAgentServer } from '@xiaofeiqwq/server';
+import { createDefaultTools } from '@xiaofeiqwq/tools';
 import { createMockProvider } from './mock-provider';
 import { createWeatherTool } from './tools';
 

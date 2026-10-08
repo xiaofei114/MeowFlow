@@ -1,4 +1,4 @@
-import { addUsage } from '@meowflow/protocol';
+import { addUsage } from '@xiaofeiqwq/protocol';
 import type {
   AgentEvent,
   AssistantMessage,
@@ -8,7 +8,7 @@ import type {
   ToolCall,
   ToolMessage,
   Usage,
-} from '@meowflow/protocol';
+} from '@xiaofeiqwq/protocol';
 import {
   ContextManager,
   SUMMARY_MARKER,

@@ -1,4 +1,4 @@
-import type { Message } from '@meowflow/protocol';
+import type { Message } from '@xiaofeiqwq/protocol';
 import type { Provider } from './provider/types';
 import { truncate } from './utils';
 

@@ -1,5 +1,5 @@
-import { PROTOCOL_VERSION } from '@meowflow/protocol';
-import type { AgentEvent } from '@meowflow/protocol';
+import { PROTOCOL_VERSION } from '@xiaofeiqwq/protocol';
+import type { AgentEvent } from '@xiaofeiqwq/protocol';
 
 /** 对联合类型做分配式 Omit，避免 Omit 把联合压扁。 */
 type DistributiveOmit<T, K extends PropertyKey> = T extends unknown ? Omit<T, K> : never;

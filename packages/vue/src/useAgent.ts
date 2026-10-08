@@ -11,7 +11,7 @@ import {
   type ResumeRequest,
   type RunRequest,
   type Usage,
-} from '@meowflow/protocol';
+} from '@xiaofeiqwq/protocol';
 import { computed, onScopeDispose, reactive, type ComputedRef } from 'vue';
 
 /** 路由配置，缺省使用协议默认路由。 */

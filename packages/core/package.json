@@ -1,5 +1,5 @@
 {
-  "name": "@meowflow/core",
+  "name": "@xiaofeiqwq/core",
   "version": "0.1.0",
   "description": "MeowFlow 核心引擎：AI 适配、Agent 主循环、工具与技能系统、上下文压缩、挂起恢复",
   "keywords": [
@@ -34,7 +34,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@meowflow/protocol": "workspace:*"
+    "@xiaofeiqwq/protocol": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.7.5"

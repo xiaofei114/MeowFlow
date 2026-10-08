@@ -1,4 +1,4 @@
-# @meowflow/vue
+# @xiaofeiqwq/vue
 
 MeowFlow 前端适配：Vue3 headless composable 与默认样式组件。
 
@@ -12,7 +12,7 @@ MeowFlow frontend adapter: Vue 3 headless composable and default-styled componen
 
 ### 简介
 
-把遵循协议的后端（例如 [`@meowflow/server`](../server/README.md)）接进 Vue3：
+把遵循协议的后端（例如 [`@xiaofeiqwq/server`](../server/README.md)）接进 Vue3：
 
 - `useAgent`：headless 组合式函数，内部只依赖协议包的 SSE 解析与事件归约，可对接任何遵循协议的后端；
 - 一组默认样式组件：`AgentChat` / `AgentMessage` / `AgentToolCall` / `AgentSuspend` / `AgentInput`，每个都提供插槽便于替换局部实现。
@@ -22,14 +22,14 @@ MeowFlow frontend adapter: Vue 3 headless composable and default-styled componen
 ### 安装
 
 ```bash
-pnpm add @meowflow/vue
+pnpm add @xiaofeiqwq/vue
 ```
 
 ### 最简用法：开箱即用的界面
 
 ```vue
 <script setup lang="ts">
-import { AgentChat, ensureAgentStyles } from '@meowflow/vue';
+import { AgentChat, ensureAgentStyles } from '@xiaofeiqwq/vue';
 ensureAgentStyles();
 </script>
 
@@ -46,7 +46,7 @@ ensureAgentStyles();
 
 ```ts
 import { createApp } from 'vue';
-import { MeowFlowVue } from '@meowflow/vue';
+import { MeowFlowVue } from '@xiaofeiqwq/vue';
 
 createApp(App).use(MeowFlowVue).mount('#app'); // 注册 AgentChat 等全部组件
 ```
@@ -54,7 +54,7 @@ createApp(App).use(MeowFlowVue).mount('#app'); // 注册 AgentChat 等全部组�
 ### useAgent
 
 ```ts
-import { useAgent } from '@meowflow/vue';
+import { useAgent } from '@xiaofeiqwq/vue';
 
 const agent = useAgent({
   baseUrl: 'http://localhost:3000',
@@ -99,7 +99,7 @@ const agent = useAgent({
 
 ```vue
 <script setup lang="ts">
-import { useAgent } from '@meowflow/vue';
+import { useAgent } from '@xiaofeiqwq/vue';
 
 const agent = useAgent({ baseUrl: 'http://localhost:3000' });
 </script>
@@ -186,7 +186,7 @@ const agent = useAgent({ baseUrl: 'http://localhost:3000' });
 
 ### Overview
 
-Connects a protocol-compliant backend (e.g. [`@meowflow/server`](../server/README.md)) to Vue 3:
+Connects a protocol-compliant backend (e.g. [`@xiaofeiqwq/server`](../server/README.md)) to Vue 3:
 
 - `useAgent`: a headless composable that depends only on the protocol package's SSE parsing and event reducer, so it works with any protocol-compliant backend;
 - A set of default-styled components: `AgentChat` / `AgentMessage` / `AgentToolCall` / `AgentSuspend` / `AgentInput`, each with slots for partial replacement.
@@ -196,14 +196,14 @@ Requires Vue `^3.4.0`.
 ### Install
 
 ```bash
-pnpm add @meowflow/vue
+pnpm add @xiaofeiqwq/vue
 ```
 
 ### Minimal usage: a ready-made UI
 
 ```vue
 <script setup lang="ts">
-import { AgentChat, ensureAgentStyles } from '@meowflow/vue';
+import { AgentChat, ensureAgentStyles } from '@xiaofeiqwq/vue';
 ensureAgentStyles();
 </script>
 
@@ -220,7 +220,7 @@ ensureAgentStyles();
 
 ```ts
 import { createApp } from 'vue';
-import { MeowFlowVue } from '@meowflow/vue';
+import { MeowFlowVue } from '@xiaofeiqwq/vue';
 
 createApp(App).use(MeowFlowVue).mount('#app'); // registers AgentChat and friends
 ```
@@ -228,7 +228,7 @@ createApp(App).use(MeowFlowVue).mount('#app'); // registers AgentChat and friend
 ### useAgent
 
 ```ts
-import { useAgent } from '@meowflow/vue';
+import { useAgent } from '@xiaofeiqwq/vue';
 
 const agent = useAgent({
   baseUrl: 'http://localhost:3000',
@@ -273,7 +273,7 @@ The in-flight request is aborted automatically when the component unmounts.
 
 ```vue
 <script setup lang="ts">
-import { useAgent } from '@meowflow/vue';
+import { useAgent } from '@xiaofeiqwq/vue';
 
 const agent = useAgent({ baseUrl: 'http://localhost:3000' });
 </script>

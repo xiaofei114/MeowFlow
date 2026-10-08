@@ -24,7 +24,7 @@ MeowFlow 是一套用于开发 AI Agent 的 TypeScript 工具库（monorepo）�
 
 | 原则 | 说明 |
 | --- | --- |
-| 协议优先 | `@meowflow/protocol` 是唯一的跨端契约：类型 + SSE 编解码 + 事件归约器 + JSON Schema |
+| 协议优先 | `@xiaofeiqwq/protocol` 是唯一的跨端契约：类型 + SSE 编解码 + 事件归约器 + JSON Schema |
 | 足够轻量 | 不绑定具体模型 SDK，自研统一适配层；不引入分词器等重依赖 |
 | 足够自由 | 每一步都可替换：Provider、工具、会话存储、前端渲染、样式 |
 | 该有的都有 | 工具系统、技能、提示词模板、挂起-恢复（HITL）、上下文压缩、日志与错误码一应俱全 |
@@ -33,11 +33,11 @@ MeowFlow 是一套用于开发 AI Agent 的 TypeScript 工具库（monorepo）�
 
 | 包 | 说明 | 运行环境 |
 | --- | --- | --- |
-| [`@meowflow/protocol`](packages/protocol/README.md) | 事件协议、传输结构、SSE 编解码、事件归约器、JSON Schema | 浏览器 / Node |
-| [`@meowflow/core`](packages/core/README.md) | 核心引擎：Provider 适配、Agent 主循环、工具注册、技能、提示词、上下文压缩、会话 | Node |
-| [`@meowflow/tools`](packages/tools/README.md) | 内置工具：文件系统、HTTP、Shell、代码搜索、向用户提问、子代理 | Node |
-| [`@meowflow/server`](packages/server/README.md) | 服务端适配：基于协议的 HTTP + SSE 接口 | Node |
-| [`@meowflow/vue`](packages/vue/README.md) | 前端适配：Vue3 headless composable + 默认样式组件 | 浏览器 |
+| [`@xiaofeiqwq/protocol`](packages/protocol/README.md) | 事件协议、传输结构、SSE 编解码、事件归约器、JSON Schema | 浏览器 / Node |
+| [`@xiaofeiqwq/core`](packages/core/README.md) | 核心引擎：Provider 适配、Agent 主循环、工具注册、技能、提示词、上下文压缩、会话 | Node |
+| [`@xiaofeiqwq/tools`](packages/tools/README.md) | 内置工具：文件系统、HTTP、Shell、代码搜索、向用户提问、子代理 | Node |
+| [`@xiaofeiqwq/server`](packages/server/README.md) | 服务端适配：基于协议的 HTTP + SSE 接口 | Node |
+| [`@xiaofeiqwq/vue`](packages/vue/README.md) | 前端适配：Vue3 headless composable + 默认样式组件 | 浏览器 |
 
 ### 架构
 
@@ -48,14 +48,14 @@ MeowFlow 是一套用于开发 AI Agent 的 TypeScript 工具库（monorepo）�
 └───────────────▲─────────────────────────────────────────┘
                 │  HTTP + SSE (AgentEvent 流)
 ┌───────────────┴─────────────────────────────────────────┐
-│  @meowflow/server   createAgentServer / createAgentHandler│
+│  @xiaofeiqwq/server   createAgentServer / createAgentHandler│
 ├─────────────────────────────────────────────────────────┤
-│  @meowflow/core     Agent 主循环                          │
+│  @xiaofeiqwq/core     Agent 主循环                          │
 │    ├─ Provider 适配层 (OpenAI 兼容 / Anthropic / 自定义)   │
 │    ├─ ToolRegistry + 挂起恢复 (HITL)                       │
 │    ├─ Skills / Prompts / 上下文压缩 / SessionStore         │
 ├─────────────────────────────────────────────────────────┤
-│  @meowflow/tools    内置工具实现                            │
+│  @xiaofeiqwq/tools    内置工具实现                            │
 └─────────────────────────────────────────────────────────┘
                 │
                 ▼
@@ -68,13 +68,13 @@ MeowFlow 是一套用于开发 AI Agent 的 TypeScript 工具库（monorepo）�
 
 ```bash
 # 后端
-pnpm add @meowflow/core @meowflow/tools @meowflow/server
+pnpm add @xiaofeiqwq/core @xiaofeiqwq/tools @xiaofeiqwq/server
 
 # 前端
-pnpm add @meowflow/vue
+pnpm add @xiaofeiqwq/vue
 
 # 仅在需要自行实现跨语言后端/前端时
-pnpm add @meowflow/protocol
+pnpm add @xiaofeiqwq/protocol
 ```
 
 ### 快速上手
@@ -82,9 +82,9 @@ pnpm add @meowflow/protocol
 #### 后端：起一个带内置工具的 Agent 服务
 
 ```ts
-import { Agent, openaiCompat } from '@meowflow/core';
-import { createDefaultTools } from '@meowflow/tools';
-import { createAgentServer } from '@meowflow/server';
+import { Agent, openaiCompat } from '@xiaofeiqwq/core';
+import { createDefaultTools } from '@xiaofeiqwq/tools';
+import { createAgentServer } from '@xiaofeiqwq/server';
 
 const agent = new Agent({
   provider: openaiCompat({
@@ -113,7 +113,7 @@ curl -N -X POST http://localhost:3000/agent/run \
 
 ```vue
 <script setup lang="ts">
-import { AgentChat, ensureAgentStyles } from '@meowflow/vue';
+import { AgentChat, ensureAgentStyles } from '@xiaofeiqwq/vue';
 ensureAgentStyles();
 </script>
 
@@ -127,7 +127,7 @@ ensureAgentStyles();
 也可以只用 headless 组合式函数，自行渲染：
 
 ```ts
-import { useAgent } from '@meowflow/vue';
+import { useAgent } from '@xiaofeiqwq/vue';
 
 const agent = useAgent({ baseUrl: 'http://localhost:3000' });
 await agent.send('你好');
@@ -140,7 +140,7 @@ console.log(agent.messages.value); // 响应式，流式更新
 
 ```bash
 pnpm install
-pnpm --filter @meowflow/example-fullstack dev
+pnpm --filter @xiaofeiqwq/example-fullstack dev
 # 打开 http://localhost:5173
 ```
 
@@ -161,7 +161,7 @@ pnpm --filter @meowflow/example-fullstack dev
 | `error` | 错误 |
 | `run-end` | 一次运行结束（completed / suspended / aborted / error） |
 
-细节见 [`@meowflow/protocol`](packages/protocol/README.md)。
+细节见 [`@xiaofeiqwq/protocol`](packages/protocol/README.md)。
 
 ### 核心概念
 
@@ -182,7 +182,7 @@ pnpm typecheck       # 类型检查
 pnpm lint            # ESLint
 pnpm format          # Prettier
 
-pnpm --filter @meowflow/example-fullstack dev   # 运行完整 demo
+pnpm --filter @xiaofeiqwq/example-fullstack dev   # 运行完整 demo
 ```
 
 ### 许可证
@@ -207,7 +207,7 @@ It puts the *protocol* at the center: frontend and backend communicate only thro
 
 | Principle | Description |
 | --- | --- |
-| Protocol first | `@meowflow/protocol` is the single cross-platform contract: types + SSE codec + event reducer + JSON Schema |
+| Protocol first | `@xiaofeiqwq/protocol` is the single cross-platform contract: types + SSE codec + event reducer + JSON Schema |
 | Lightweight | No vendor SDK lock-in, self-built unified adapter layer, no heavy dependencies such as tokenizers |
 | Flexible | Everything is replaceable: Provider, tools, session store, frontend rendering, styles |
 | Batteries included | Tool system, skills, prompt templates, suspend/resume (HITL), context compression, logging and error codes |
@@ -216,11 +216,11 @@ It puts the *protocol* at the center: frontend and backend communicate only thro
 
 | Package | Description | Runtime |
 | --- | --- | --- |
-| [`@meowflow/protocol`](packages/protocol/README.md) | Event protocol, transport structures, SSE codec, event reducer, JSON Schema | Browser / Node |
-| [`@meowflow/core`](packages/core/README.md) | Core engine: provider adapters, agent loop, tool registry, skills, prompts, context compression, sessions | Node |
-| [`@meowflow/tools`](packages/tools/README.md) | Built-in tools: filesystem, HTTP, shell, code search, ask-user, sub-agent | Node |
-| [`@meowflow/server`](packages/server/README.md) | Server adapter: protocol-based HTTP + SSE endpoints | Node |
-| [`@meowflow/vue`](packages/vue/README.md) | Frontend adapter: Vue 3 headless composable + default-styled components | Browser |
+| [`@xiaofeiqwq/protocol`](packages/protocol/README.md) | Event protocol, transport structures, SSE codec, event reducer, JSON Schema | Browser / Node |
+| [`@xiaofeiqwq/core`](packages/core/README.md) | Core engine: provider adapters, agent loop, tool registry, skills, prompts, context compression, sessions | Node |
+| [`@xiaofeiqwq/tools`](packages/tools/README.md) | Built-in tools: filesystem, HTTP, shell, code search, ask-user, sub-agent | Node |
+| [`@xiaofeiqwq/server`](packages/server/README.md) | Server adapter: protocol-based HTTP + SSE endpoints | Node |
+| [`@xiaofeiqwq/vue`](packages/vue/README.md) | Frontend adapter: Vue 3 headless composable + default-styled components | Browser |
 
 ### Install
 
@@ -228,13 +228,13 @@ Node.js >= 18 is required.
 
 ```bash
 # Backend
-pnpm add @meowflow/core @meowflow/tools @meowflow/server
+pnpm add @xiaofeiqwq/core @xiaofeiqwq/tools @xiaofeiqwq/server
 
 # Frontend
-pnpm add @meowflow/vue
+pnpm add @xiaofeiqwq/vue
 
 # Only when implementing a cross-language backend/frontend yourself
-pnpm add @meowflow/protocol
+pnpm add @xiaofeiqwq/protocol
 ```
 
 ### Quick start
@@ -242,9 +242,9 @@ pnpm add @meowflow/protocol
 #### Backend: an agent server with built-in tools
 
 ```ts
-import { Agent, openaiCompat } from '@meowflow/core';
-import { createDefaultTools } from '@meowflow/tools';
-import { createAgentServer } from '@meowflow/server';
+import { Agent, openaiCompat } from '@xiaofeiqwq/core';
+import { createDefaultTools } from '@xiaofeiqwq/tools';
+import { createAgentServer } from '@xiaofeiqwq/server';
 
 const agent = new Agent({
   provider: openaiCompat({
@@ -273,7 +273,7 @@ curl -N -X POST http://localhost:3000/agent/run \
 
 ```vue
 <script setup lang="ts">
-import { AgentChat, ensureAgentStyles } from '@meowflow/vue';
+import { AgentChat, ensureAgentStyles } from '@xiaofeiqwq/vue';
 ensureAgentStyles();
 </script>
 
@@ -287,7 +287,7 @@ ensureAgentStyles();
 Or use the headless composable and render yourself:
 
 ```ts
-import { useAgent } from '@meowflow/vue';
+import { useAgent } from '@xiaofeiqwq/vue';
 
 const agent = useAgent({ baseUrl: 'http://localhost:3000' });
 await agent.send('Hello');
@@ -300,7 +300,7 @@ console.log(agent.messages.value); // reactive, streaming updates
 
 ```bash
 pnpm install
-pnpm --filter @meowflow/example-fullstack dev
+pnpm --filter @xiaofeiqwq/example-fullstack dev
 # open http://localhost:5173
 ```
 
@@ -321,7 +321,7 @@ The server pushes `AgentEvent`s over SSE. Every event shares the same meta: `v` 
 | `error` | Error |
 | `run-end` | Run finished (completed / suspended / aborted / error) |
 
-See [`@meowflow/protocol`](packages/protocol/README.md) for details.
+See [`@xiaofeiqwq/protocol`](packages/protocol/README.md) for details.
 
 ### Core concepts
 
@@ -342,7 +342,7 @@ pnpm typecheck       # type check
 pnpm lint            # ESLint
 pnpm format          # Prettier
 
-pnpm --filter @meowflow/example-fullstack dev   # run the full demo
+pnpm --filter @xiaofeiqwq/example-fullstack dev   # run the full demo
 ```
 
 ### License

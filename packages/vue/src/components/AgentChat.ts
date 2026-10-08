@@ -1,4 +1,4 @@
-import type { AccumulatedMessage } from '@meowflow/protocol';
+import type { AccumulatedMessage } from '@xiaofeiqwq/protocol';
 import { computed, defineComponent, h, type PropType, type VNodeChild } from 'vue';
 import { ensureAgentStyles } from '../styles';
 import {

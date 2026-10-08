@@ -1,5 +1,5 @@
 {
-  "name": "@meowflow/vue",
+  "name": "@xiaofeiqwq/vue",
   "version": "0.1.0",
   "description": "MeowFlow 前端适配：Vue3 headless composable 与默认样式组件",
   "keywords": [
@@ -34,7 +34,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@meowflow/protocol": "workspace:*"
+    "@xiaofeiqwq/protocol": "workspace:*"
   },
   "peerDependencies": {
     "vue": "^3.4.0"

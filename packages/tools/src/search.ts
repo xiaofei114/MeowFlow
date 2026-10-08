@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { ToolResult, defineTool, toolError, type ToolDefinition } from '@meowflow/core';
+import { ToolResult, defineTool, toolError, type ToolDefinition } from '@xiaofeiqwq/core';
 import { clip, globToRegExp, walkFiles } from './utils';
 
 export interface SearchToolOptions {

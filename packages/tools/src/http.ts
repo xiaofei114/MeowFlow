@@ -1,4 +1,4 @@
-import { ToolResult, defineTool, toolError, type ToolDefinition } from '@meowflow/core';
+import { ToolResult, defineTool, toolError, type ToolDefinition } from '@xiaofeiqwq/core';
 import { clip } from './utils';
 
 export interface HttpToolOptions {

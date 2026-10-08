@@ -1,4 +1,4 @@
-import type { Message, ToolSpec, Usage } from '@meowflow/protocol';
+import type { Message, ToolSpec, Usage } from '@xiaofeiqwq/protocol';
 
 /** 结束原因，各 Provider 需归一到该集合。 */
 export type FinishReason =

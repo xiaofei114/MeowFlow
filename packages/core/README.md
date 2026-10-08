@@ -1,4 +1,4 @@
-# @meowflow/core
+# @xiaofeiqwq/core
 
 MeowFlow 核心引擎：AI 适配、Agent 主循环、工具与技能系统、上下文压缩、挂起恢复。
 
@@ -12,20 +12,20 @@ MeowFlow core engine: provider adapters, agent loop, tool and skill systems, con
 
 ### 简介
 
-`@meowflow/core` 提供不依赖任何 Web 框架的 Agent 运行时，运行在 Node 环境。它向外产出 `AgentEvent` 异步流，因此既可直连 [`@meowflow/server`](../server/README.md) 暴露为 SSE，也可自行消费。
+`@xiaofeiqwq/core` 提供不依赖任何 Web 框架的 Agent 运行时，运行在 Node 环境。它向外产出 `AgentEvent` 异步流，因此既可直连 [`@xiaofeiqwq/server`](../server/README.md) 暴露为 SSE，也可自行消费。
 
-同时它重导出了 [`@meowflow/protocol`](../protocol/README.md) 的所有类型与工具，使用方只需引入本包即可。
+同时它重导出了 [`@xiaofeiqwq/protocol`](../protocol/README.md) 的所有类型与工具，使用方只需引入本包即可。
 
 ### 安装
 
 ```bash
-pnpm add @meowflow/core
+pnpm add @xiaofeiqwq/core
 ```
 
 ### 快速上手
 
 ```ts
-import { Agent, openaiCompat } from '@meowflow/core';
+import { Agent, openaiCompat } from '@xiaofeiqwq/core';
 
 const agent = new Agent({
   provider: openaiCompat({
@@ -105,7 +105,7 @@ await agent.resume({ sessionId, callId, answer: '蓝色' });
 内置两种适配器，覆盖市面上绝大多数服务。
 
 ```ts
-import { openaiCompat, anthropic, OPENAI_COMPAT_PRESETS } from '@meowflow/core';
+import { openaiCompat, anthropic, OPENAI_COMPAT_PRESETS } from '@xiaofeiqwq/core';
 
 const a = openaiCompat({
   model: 'deepseek-chat',
@@ -142,7 +142,7 @@ interface Provider {
 ### 工具系统
 
 ```ts
-import { defineTool, ToolResult, toolResult, toolError, suspend } from '@meowflow/core';
+import { defineTool, ToolResult, toolResult, toolError, suspend } from '@xiaofeiqwq/core';
 
 const weather = defineTool({
   name: 'get_weather',
@@ -183,7 +183,7 @@ tools: [read_file, search_code]
 ```
 
 ```ts
-import { parseSkillMarkdown, defineSkill, loadSkills, findSkill } from '@meowflow/core';
+import { parseSkillMarkdown, defineSkill, loadSkills, findSkill } from '@xiaofeiqwq/core';
 
 const skills = await loadSkills({ dir: './skills', fileName: 'SKILL.md', maxDepth: 4 });
 ```
@@ -199,7 +199,7 @@ import {
   renderPrompt,
   loadPromptFile,
   loadPromptDir,
-} from '@meowflow/core';
+} from '@xiaofeiqwq/core';
 
 renderPrompt('你好 {{name}}', { name: '世界' }); // "你好 世界"，未提供的变量原样保留
 const { content } = await loadPromptFile('./prompts/system.md');
@@ -209,7 +209,7 @@ const all = await loadPromptDir('./prompts');   // 加载 .md / .txt
 ### 上下文压缩
 
 ```ts
-import { ContextManager, compressContext, DEFAULT_CONTEXT_OPTIONS } from '@meowflow/core';
+import { ContextManager, compressContext, DEFAULT_CONTEXT_OPTIONS } from '@xiaofeiqwq/core';
 ```
 
 `DEFAULT_CONTEXT_OPTIONS`：`maxTokens: 128000`、`compressThreshold: 0.8`、`keepRecentMessages: 8`、`maxToolResultLength: 2000`。
@@ -221,7 +221,7 @@ token 估算为启发式（CJK 约 1 token/字，其余约 4 字符/token），�
 ### 会话
 
 ```ts
-import { MemorySessionStore, createSessionState } from '@meowflow/core';
+import { MemorySessionStore, createSessionState } from '@xiaofeiqwq/core';
 
 interface SessionStore {
   get(id: string): MaybePromise<SessionState | undefined>;
@@ -245,20 +245,20 @@ interface SessionStore {
 
 ### Overview
 
-`@meowflow/core` provides a web-framework-agnostic agent runtime for Node. It produces an async stream of `AgentEvent`s, so it can either feed [`@meowflow/server`](../server/README.md) to expose SSE, or be consumed directly.
+`@xiaofeiqwq/core` provides a web-framework-agnostic agent runtime for Node. It produces an async stream of `AgentEvent`s, so it can either feed [`@xiaofeiqwq/server`](../server/README.md) to expose SSE, or be consumed directly.
 
-It also re-exports everything from [`@meowflow/protocol`](../protocol/README.md), so this package is the only import you need.
+It also re-exports everything from [`@xiaofeiqwq/protocol`](../protocol/README.md), so this package is the only import you need.
 
 ### Install
 
 ```bash
-pnpm add @meowflow/core
+pnpm add @xiaofeiqwq/core
 ```
 
 ### Quick start
 
 ```ts
-import { Agent, openaiCompat } from '@meowflow/core';
+import { Agent, openaiCompat } from '@xiaofeiqwq/core';
 
 const agent = new Agent({
   provider: openaiCompat({
@@ -338,7 +338,7 @@ await agent.resume({ sessionId, callId, answer: 'blue' });
 Two adapters cover the vast majority of services.
 
 ```ts
-import { openaiCompat, anthropic, OPENAI_COMPAT_PRESETS } from '@meowflow/core';
+import { openaiCompat, anthropic, OPENAI_COMPAT_PRESETS } from '@xiaofeiqwq/core';
 
 const a = openaiCompat({
   model: 'deepseek-chat',
@@ -375,7 +375,7 @@ interface Provider {
 ### Tool system
 
 ```ts
-import { defineTool, ToolResult, toolResult, toolError, suspend } from '@meowflow/core';
+import { defineTool, ToolResult, toolResult, toolError, suspend } from '@xiaofeiqwq/core';
 
 const weather = defineTool({
   name: 'get_weather',
@@ -416,7 +416,7 @@ tools: [read_file, search_code]
 ```
 
 ```ts
-import { parseSkillMarkdown, defineSkill, loadSkills, findSkill } from '@meowflow/core';
+import { parseSkillMarkdown, defineSkill, loadSkills, findSkill } from '@xiaofeiqwq/core';
 
 const skills = await loadSkills({ dir: './skills', fileName: 'SKILL.md', maxDepth: 4 });
 ```
@@ -427,7 +427,7 @@ const skills = await loadSkills({ dir: './skills', fileName: 'SKILL.md', maxDept
 ### Prompts
 
 ```ts
-import { definePrompt, renderPrompt, loadPromptFile, loadPromptDir } from '@meowflow/core';
+import { definePrompt, renderPrompt, loadPromptFile, loadPromptDir } from '@xiaofeiqwq/core';
 
 renderPrompt('Hello {{name}}', { name: 'world' }); // "Hello world"; unknown vars are left as-is
 const { content } = await loadPromptFile('./prompts/system.md');
@@ -437,7 +437,7 @@ const all = await loadPromptDir('./prompts');      // loads .md / .txt
 ### Context compression
 
 ```ts
-import { ContextManager, compressContext, DEFAULT_CONTEXT_OPTIONS } from '@meowflow/core';
+import { ContextManager, compressContext, DEFAULT_CONTEXT_OPTIONS } from '@xiaofeiqwq/core';
 ```
 
 `DEFAULT_CONTEXT_OPTIONS`: `maxTokens: 128000`, `compressThreshold: 0.8`, `keepRecentMessages: 8`, `maxToolResultLength: 2000`.
@@ -449,7 +449,7 @@ Token estimation is heuristic (about 1 token per CJK char, about 4 chars per tok
 ### Sessions
 
 ```ts
-import { MemorySessionStore, createSessionState } from '@meowflow/core';
+import { MemorySessionStore, createSessionState } from '@xiaofeiqwq/core';
 
 interface SessionStore {
   get(id: string): MaybePromise<SessionState | undefined>;

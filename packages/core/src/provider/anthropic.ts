@@ -1,5 +1,5 @@
-import { SseParser } from '@meowflow/protocol';
-import type { Message, Usage } from '@meowflow/protocol';
+import { SseParser } from '@xiaofeiqwq/protocol';
+import type { Message, Usage } from '@xiaofeiqwq/protocol';
 import { ProviderError, isAbortError } from '../errors';
 import { normalizeBaseUrl, safeJsonParse } from '../utils';
 import type { FetchLike } from './openai-compat';

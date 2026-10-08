@@ -1,6 +1,6 @@
 import { spawn, type ChildProcess } from 'node:child_process';
 import { resolve } from 'node:path';
-import { ToolResult, defineTool, toolError, type ToolDefinition } from '@meowflow/core';
+import { ToolResult, defineTool, toolError, type ToolDefinition } from '@xiaofeiqwq/core';
 import { clip } from './utils';
 
 export interface ShellToolOptions {

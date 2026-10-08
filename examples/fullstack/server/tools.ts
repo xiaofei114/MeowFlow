@@ -4,7 +4,7 @@
  * 用 `defineTool` 定义后，即可和内置工具一起挂到 Agent 的 `tools` 上。
  * 这里刻意不依赖网络，方便 demo 离线跑通；真实场景把 fetch 那段放开即可。
  */
-import { defineTool, toolError, toolResult, type ToolDefinition } from '@meowflow/core';
+import { defineTool, toolError, toolResult, type ToolDefinition } from '@xiaofeiqwq/core';
 
 type WeatherArgs = { city: string; unit?: 'c' | 'f' };
 

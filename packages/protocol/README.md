@@ -1,4 +1,4 @@
-# @meowflow/protocol
+# @xiaofeiqwq/protocol
 
 MeowFlow 事件协议：前后端与其他语言共用的类型、SSE 编解码与 JSON Schema。
 
@@ -23,7 +23,7 @@ MeowFlow event protocol: types, SSE codec and JSON Schema shared between fronten
 ### 安装
 
 ```bash
-pnpm add @meowflow/protocol
+pnpm add @xiaofeiqwq/protocol
 ```
 
 ### 事件元信息
@@ -110,7 +110,7 @@ import {
   decodeSseEvent,
   SseParser,
   SSE_CONTENT_TYPE,
-} from '@meowflow/protocol';
+} from '@xiaofeiqwq/protocol';
 
 // 服务端
 const chunk = encodeSse(event);        // "data: {...}\n\n"
@@ -130,7 +130,7 @@ for (const payload of [...payloads, ...tail]) {
 `AgentEventAccumulator` 是协议语义的参考实现，把事件流还原为可直接渲染的 `AccumulatedState`：
 
 ```ts
-import { AgentEventAccumulator, createAccumulatedState } from '@meowflow/protocol';
+import { AgentEventAccumulator, createAccumulatedState } from '@xiaofeiqwq/protocol';
 
 const accumulator = new AgentEventAccumulator();
 for await (const event of stream) accumulator.apply(event);
@@ -155,7 +155,7 @@ const accumulator = new AgentEventAccumulator(state);
 `agentEventJsonSchema`（draft-07）是与语言无关的协议契约，可交给任意语言做运行时校验或生成模型代码：
 
 ```ts
-import { agentEventJsonSchema } from '@meowflow/protocol';
+import { agentEventJsonSchema } from '@xiaofeiqwq/protocol';
 ```
 
 ### 其他语言如何对接
@@ -186,7 +186,7 @@ This is MeowFlow's **single cross-platform contract**. It depends on no runtime-
 ### Install
 
 ```bash
-pnpm add @meowflow/protocol
+pnpm add @xiaofeiqwq/protocol
 ```
 
 ### Event meta
@@ -273,7 +273,7 @@ import {
   decodeSseEvent,
   SseParser,
   SSE_CONTENT_TYPE,
-} from '@meowflow/protocol';
+} from '@xiaofeiqwq/protocol';
 
 // Server
 const chunk = encodeSse(event);        // "data: {...}\n\n"
@@ -293,7 +293,7 @@ for (const payload of [...payloads, ...tail]) {
 `AgentEventAccumulator` is the reference implementation of the protocol semantics; it turns an event stream into a render-ready `AccumulatedState`:
 
 ```ts
-import { AgentEventAccumulator, createAccumulatedState } from '@meowflow/protocol';
+import { AgentEventAccumulator, createAccumulatedState } from '@xiaofeiqwq/protocol';
 
 const accumulator = new AgentEventAccumulator();
 for await (const event of stream) accumulator.apply(event);
@@ -318,7 +318,7 @@ const accumulator = new AgentEventAccumulator(state);
 `agentEventJsonSchema` (draft-07) is the language-agnostic contract, ready for runtime validation or code generation in any language:
 
 ```ts
-import { agentEventJsonSchema } from '@meowflow/protocol';
+import { agentEventJsonSchema } from '@xiaofeiqwq/protocol';
 ```
 
 ### Interop with other languages

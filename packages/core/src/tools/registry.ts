@@ -1,4 +1,4 @@
-import type { ToolSpec } from '@meowflow/protocol';
+import type { ToolSpec } from '@xiaofeiqwq/protocol';
 import type { ToolDefinition } from './types';
 
 /** 工具注册表，负责注册、查找与导出给模型的工具声明。 */

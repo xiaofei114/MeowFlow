@@ -41,19 +41,19 @@ importers:
 
   examples/fullstack:
     dependencies:
-      '@meowflow/core':
+      '@xiaofeiqwq/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@meowflow/protocol':
+      '@xiaofeiqwq/protocol':
         specifier: workspace:*
         version: link:../../packages/protocol
-      '@meowflow/server':
+      '@xiaofeiqwq/server':
         specifier: workspace:*
         version: link:../../packages/server
-      '@meowflow/tools':
+      '@xiaofeiqwq/tools':
         specifier: workspace:*
         version: link:../../packages/tools
-      '@meowflow/vue':
+      '@xiaofeiqwq/vue':
         specifier: workspace:*
         version: link:../../packages/vue
       vue:
@@ -84,7 +84,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@meowflow/protocol':
+      '@xiaofeiqwq/protocol':
         specifier: workspace:*
         version: link:../protocol
     devDependencies:
@@ -96,10 +96,10 @@ importers:
 
   packages/server:
     dependencies:
-      '@meowflow/core':
+      '@xiaofeiqwq/core':
         specifier: workspace:*
         version: link:../core
-      '@meowflow/protocol':
+      '@xiaofeiqwq/protocol':
         specifier: workspace:*
         version: link:../protocol
     devDependencies:
@@ -109,10 +109,10 @@ importers:
 
   packages/tools:
     dependencies:
-      '@meowflow/core':
+      '@xiaofeiqwq/core':
         specifier: workspace:*
         version: link:../core
-      '@meowflow/protocol':
+      '@xiaofeiqwq/protocol':
         specifier: workspace:*
         version: link:../protocol
     devDependencies:
@@ -122,7 +122,7 @@ importers:
 
   packages/vue:
     dependencies:
-      '@meowflow/protocol':
+      '@xiaofeiqwq/protocol':
         specifier: workspace:*
         version: link:../protocol
     devDependencies:

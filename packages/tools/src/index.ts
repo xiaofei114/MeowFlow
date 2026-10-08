@@ -1,4 +1,4 @@
-import { type ToolDefinition } from '@meowflow/core';
+import { type ToolDefinition } from '@xiaofeiqwq/core';
 import { createAskTool, type AskToolOptions } from './ask';
 import { createFileTools, type FileToolOptions } from './fs';
 import { createHttpTools, type HttpToolOptions } from './http';

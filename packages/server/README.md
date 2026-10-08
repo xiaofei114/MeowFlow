@@ -1,4 +1,4 @@
-# @meowflow/server
+# @xiaofeiqwq/server
 
 MeowFlow 服务端适配：基于协议规范的 HTTP + SSE 接口，供任意语言的前端或后端对接。
 
@@ -12,22 +12,22 @@ MeowFlow server adapter: protocol-based HTTP + SSE endpoints consumable by any f
 
 ### 简介
 
-把 [`@meowflow/core`](../core/README.md) 的 `Agent` 暴露为一组符合 [`@meowflow/protocol`](../protocol/README.md) 规范的 HTTP 接口：以 SSE 流式推送 `AgentEvent`，并提供恢复、中断、会话查询与健康检查。
+把 [`@xiaofeiqwq/core`](../core/README.md) 的 `Agent` 暴露为一组符合 [`@xiaofeiqwq/protocol`](../protocol/README.md) 规范的 HTTP 接口：以 SSE 流式推送 `AgentEvent`，并提供恢复、中断、会话查询与健康检查。
 
 只依赖 Node 内置 `http` 模块，因此既可用 `createAgentServer` 一键起服务，也可用 `createAgentHandler` 挂载到自己的 http 服务或任意支持 `(req, res)` 的框架上。
 
 ### 安装
 
 ```bash
-pnpm add @meowflow/server
+pnpm add @xiaofeiqwq/server
 ```
 
 ### 快速上手
 
 ```ts
-import { Agent, openaiCompat } from '@meowflow/core';
-import { createDefaultTools } from '@meowflow/tools';
-import { createAgentServer } from '@meowflow/server';
+import { Agent, openaiCompat } from '@xiaofeiqwq/core';
+import { createDefaultTools } from '@xiaofeiqwq/tools';
+import { createAgentServer } from '@xiaofeiqwq/server';
 
 const agent = new Agent({
   provider: openaiCompat({ model: 'gpt-4o-mini', apiKey: process.env.OPENAI_API_KEY! }),
@@ -64,7 +64,7 @@ console.log(`已启动 ${info.url}`);
 
 ```ts
 import { createServer } from 'node:http';
-import { createAgentHandler } from '@meowflow/server';
+import { createAgentHandler } from '@xiaofeiqwq/server';
 
 const handler = createAgentHandler({
   agent,
@@ -135,22 +135,22 @@ curl -X POST http://localhost:3000/agent/abort \
 
 ### Overview
 
-Exposes an [`@meowflow/core`](../core/README.md) `Agent` as a set of HTTP endpoints conforming to the [`@meowflow/protocol`](../protocol/README.md): streaming `AgentEvent`s over SSE, plus resume, abort, session query and health check.
+Exposes an [`@xiaofeiqwq/core`](../core/README.md) `Agent` as a set of HTTP endpoints conforming to the [`@xiaofeiqwq/protocol`](../protocol/README.md): streaming `AgentEvent`s over SSE, plus resume, abort, session query and health check.
 
 It depends only on Node's built-in `http` module, so you can either spin up a server with `createAgentServer`, or mount `createAgentHandler` onto your own http server or any framework supporting `(req, res)`.
 
 ### Install
 
 ```bash
-pnpm add @meowflow/server
+pnpm add @xiaofeiqwq/server
 ```
 
 ### Quick start
 
 ```ts
-import { Agent, openaiCompat } from '@meowflow/core';
-import { createDefaultTools } from '@meowflow/tools';
-import { createAgentServer } from '@meowflow/server';
+import { Agent, openaiCompat } from '@xiaofeiqwq/core';
+import { createDefaultTools } from '@xiaofeiqwq/tools';
+import { createAgentServer } from '@xiaofeiqwq/server';
 
 const agent = new Agent({
   provider: openaiCompat({ model: 'gpt-4o-mini', apiKey: process.env.OPENAI_API_KEY! }),
@@ -187,7 +187,7 @@ In addition to `AgentHandlerOptions`:
 
 ```ts
 import { createServer } from 'node:http';
-import { createAgentHandler } from '@meowflow/server';
+import { createAgentHandler } from '@xiaofeiqwq/server';
 
 const handler = createAgentHandler({
   agent,

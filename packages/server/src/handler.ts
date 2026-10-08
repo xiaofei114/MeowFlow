@@ -6,7 +6,7 @@ import {
   type Agent,
   type Logger,
   type LogLevel,
-} from '@meowflow/core';
+} from '@xiaofeiqwq/core';
 import {
   DEFAULT_ROUTES,
   PROTOCOL_VERSION,
@@ -17,7 +17,7 @@ import {
   type ErrorResponse,
   type ResumeRequest,
   type RunRequest,
-} from '@meowflow/protocol';
+} from '@xiaofeiqwq/protocol';
 
 /** 路由表类型，键与默认路由一致，值可覆盖。 */
 export type AgentRoutes = typeof DEFAULT_ROUTES;

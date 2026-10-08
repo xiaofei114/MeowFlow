@@ -1,8 +1,8 @@
 # MeowFlow 全栈 Demo
 
-一个开箱即跑的全栈示例：Node 端用 MeowFlow 起 SSE 服务，Vue3 端用 `@meowflow/vue` 的组件渲染。
+一个开箱即跑的全栈示例：Node 端用 MeowFlow 起 SSE 服务，Vue3 端用 `@xiaofeiqwq/vue` 的组件渲染。
 
-A ready-to-run full-stack example: a Node SSE server built with MeowFlow, rendered by `@meowflow/vue` components.
+A ready-to-run full-stack example: a Node SSE server built with MeowFlow, rendered by `@xiaofeiqwq/vue` components.
 
 [中文](#中文) | [English](#english)
 
@@ -14,7 +14,7 @@ A ready-to-run full-stack example: a Node SSE server built with MeowFlow, render
 
 - **零配置可跑**：未设置 `OPENAI_API_KEY` 时使用内置 mock provider，无需联网、无需密钥即可完整体验流式输出、思考过程、内置工具调用、自定义工具调用与挂起交互。
 - **切换真实模型**：设置 `OPENAI_API_KEY` 后自动切换到真实模型（任何 OpenAI 兼容服务均可）。
-- **内置 + 自定义工具**：既挂载了 `@meowflow/tools` 的全部默认工具，也用 `defineTool` 演示了一个自定义工具 `get_weather`。
+- **内置 + 自定义工具**：既挂载了 `@xiaofeiqwq/tools` 的全部默认工具，也用 `defineTool` 演示了一个自定义工具 `get_weather`。
 - **HITL 演示**：服务端不提供 `onSuspend`，因此提问会以「挂起」形式推到前端，由用户在界面上作答后再继续。
 
 ### 运行
@@ -22,7 +22,7 @@ A ready-to-run full-stack example: a Node SSE server built with MeowFlow, render
 ```bash
 # 在仓库根目录
 pnpm install
-pnpm --filter @meowflow/example-fullstack dev
+pnpm --filter @xiaofeiqwq/example-fullstack dev
 ```
 
 然后打开 http://localhost:5173 。
@@ -34,7 +34,7 @@ pnpm --filter @meowflow/example-fullstack dev
 | 服务端 | http://localhost:3000 | `tsx watch server/index.ts` |
 | 前端 | http://localhost:5173 | Vite，已把 `/agent` 代理到 3000 |
 
-也可以分别启动：`pnpm --filter @meowflow/example-fullstack dev:server` / `dev:web`。
+也可以分别启动：`pnpm --filter @xiaofeiqwq/example-fullstack dev:server` / `dev:web`。
 
 ### 体验路径
 
@@ -61,13 +61,13 @@ pnpm --filter @meowflow/example-fullstack dev
 ```bash
 # PowerShell
 $env:OPENAI_API_KEY="sk-xxx"; $env:OPENAI_BASE_URL="https://api.deepseek.com/v1"; $env:MEOWFLOW_MODEL="deepseek-chat"
-pnpm --filter @meowflow/example-fullstack dev
+pnpm --filter @xiaofeiqwq/example-fullstack dev
 ```
 
 ```bash
 # bash
 OPENAI_API_KEY=sk-xxx OPENAI_BASE_URL=https://api.deepseek.com/v1 MEOWFLOW_MODEL=deepseek-chat \
-  pnpm --filter @meowflow/example-fullstack dev
+  pnpm --filter @xiaofeiqwq/example-fullstack dev
 ```
 
 ### 目录结构
@@ -101,7 +101,7 @@ curl -N -X POST http://localhost:3000/agent/run \
 
 - **Runs with zero config**: without `OPENAI_API_KEY`, a built-in mock provider is used, so you can experience streaming, thinking, built-in tools, custom tools and suspend/resume with no network or key.
 - **Switch to a real model**: set `OPENAI_API_KEY` to use a real model (any OpenAI-compatible service works).
-- **Built-in + custom tools**: it mounts all default tools from `@meowflow/tools` and also demonstrates a custom `get_weather` tool defined with `defineTool`.
+- **Built-in + custom tools**: it mounts all default tools from `@xiaofeiqwq/tools` and also demonstrates a custom `get_weather` tool defined with `defineTool`.
 - **HITL demo**: the server omits `onSuspend`, so questions are pushed to the frontend as suspensions and continue after the user answers.
 
 ### Run
@@ -109,7 +109,7 @@ curl -N -X POST http://localhost:3000/agent/run \
 ```bash
 # from the repo root
 pnpm install
-pnpm --filter @meowflow/example-fullstack dev
+pnpm --filter @xiaofeiqwq/example-fullstack dev
 ```
 
 Then open http://localhost:5173 .
@@ -121,7 +121,7 @@ Then open http://localhost:5173 .
 | Server | http://localhost:3000 | `tsx watch server/index.ts` |
 | Web | http://localhost:5173 | Vite, proxying `/agent` to 3000 |
 
-You can also start them separately: `pnpm --filter @meowflow/example-fullstack dev:server` / `dev:web`.
+You can also start them separately: `pnpm --filter @xiaofeiqwq/example-fullstack dev:server` / `dev:web`.
 
 ### What to try
 

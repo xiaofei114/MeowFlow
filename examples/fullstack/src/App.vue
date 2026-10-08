@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AgentChat, useAgent } from '@meowflow/vue';
+import { AgentChat, useAgent } from '@xiaofeiqwq/vue';
 
 // 不传 baseUrl：默认走同源相对路径，由 Vite 的 /agent 代理转发到后端。
 const agent = useAgent();

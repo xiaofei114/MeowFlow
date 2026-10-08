@@ -1,4 +1,4 @@
-import type { ToolCall } from '@meowflow/protocol';
+import type { ToolCall } from '@xiaofeiqwq/protocol';
 import { isAbortError } from '../errors';
 import { safeJsonParse, stringifyValue } from '../utils';
 import type { ToolRegistry } from './registry';

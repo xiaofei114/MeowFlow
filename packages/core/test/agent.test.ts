@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { AgentEvent } from '@meowflow/protocol';
+import type { AgentEvent } from '@xiaofeiqwq/protocol';
 import {
   Agent,
   MemorySessionStore,

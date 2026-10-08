@@ -1,4 +1,4 @@
-import { ToolResult, defineTool, toolError, type ToolDefinition } from '@meowflow/core';
+import { ToolResult, defineTool, toolError, type ToolDefinition } from '@xiaofeiqwq/core';
 
 export interface SubAgentToolOptions {
   /** 自定义工具名，默认 task */

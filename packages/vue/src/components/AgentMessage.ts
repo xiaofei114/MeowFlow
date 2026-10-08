@@ -1,4 +1,4 @@
-import type { AccumulatedMessage } from '@meowflow/protocol';
+import type { AccumulatedMessage } from '@xiaofeiqwq/protocol';
 import { defineComponent, h, ref, type PropType, type VNodeChild } from 'vue';
 import { AgentToolCall } from './AgentToolCall';
 
